@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            background-color: #111723;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0 10%;
+        }
+
+        .header {
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            margin: 10px auto;
+            width: 70%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: rgba(236, 236, 236, 1);
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            border: 1px solid transparent;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: #8DC9F2;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .content-wrapper {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .text-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .image-content {
+            flex: 1;
+            text-align: center;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .gradient-text {
+            font-size: 50px;
+            background: linear-gradient(90deg, rgb(221, 69, 153), rgb(40, 108, 216), rgb(153, 18, 153));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 300;
+            letter-spacing: 3px;
+            line-height: 1.2;
+            text-align: left;
+            margin-left: 0;
+        }
+
+        .gradient-button {
+            padding: 10px;
+            border: none;
+            position: relative;
+            background: transparent;
+            color: rgba(236, 236, 236, 1);
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1;
+            margin-left: 0;
+            display: block;
+            margin-top: 20px;
+        }
+
+        .gradient-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 5px;
+            padding: 2px;
+            background: linear-gradient(45deg, rgb(40, 108, 216), rgb(153, 18, 153), rgb(221, 69, 153));
+            -webkit-mask: linear-gradient(#dcdcdcf5 0 0) content-box, linear-gradient(#d4d4d4 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .gradient-button:hover,
+        .gradient-button:focus {
+            border-radius: 5px;
+            background: linear-gradient(45deg, rgb(40, 108, 216), rgb(153, 18, 153), rgb(221, 69, 153));
+            outline: none;
+        }
+
+        .sub-info {
+            font-size: 1em;
+            color: rgba(241, 240, 240, 0.797);
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: left;
+            max-width: 500px;
+            margin: 20px 0;
+        }
+
+        .portfolio-image {
+            max-width: 60%;
+            height: auto;
+            border-radius: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .image-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 90%;
+            height: 90%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(30, 60, 90, 0.2) 30%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+
+            .text-content,
+            .image-content {
+                min-width: unset;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header" role="banner">
+        <ul class="nav-links" role="navigation">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+    <div class="content-wrapper">
+        <div class="text-content">
+            <h1 class="gradient-text">FRONTEND<br>DEVELOPER</h1>
+            <p class="sub-info">
+                Innovative Web Developer specializing in creating efficient and user-friendly digital solutions.
+            </p>
+            <button class="gradient-button">VIEW MY WORK</button>
+        </div>
+        <div class="image-content">
+            <img src="Photo.png" class="portfolio-image" alt="Portfolio Image" loading="lazy">
+        </div>
+    </div>
+</body>
+</html>
