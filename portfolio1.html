@@ -5,25 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <style>
+        /* Previous styles remain the same */
         body {
             background-color: #111723;
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             padding: 0 10%;
         }
+          /* Add smooth scrolling behavior to html */
+          html {
+            scroll-behavior: smooth;
+        }
 
+        /* Add padding-top to sections to account for fixed header */
+        section {
+            padding-top: 70px;  /* Adjust this value based on your header height */
+            margin-top: -70px;  /* Negative margin to offset the padding */
+        }
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
         .header {
-            background-color: transparent;
+            background-color: rgba(17, 23, 35, 0.9); /* Semi-transparent background */
             border: 1px solid rgba(255, 255, 255, 0.5);
             border-radius: 5px;
             display: flex;
             justify-content: center;
             padding: 10px 0;
             margin: 10px auto;
-            width: 70%;
-            position: sticky;
-            top: 0;
+            width: 50%;
+            position: fixed; /* Change from sticky to fixed */
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 1000;
+            backdrop-filter: blur(5px); /* Add blur effect to background */
         }
 
         .nav-links {
@@ -60,6 +79,7 @@
             align-items: center;
             flex-wrap: wrap;
             margin-top: 50px;
+            margin-bottom: 100px;
         }
 
         .text-content {
@@ -155,6 +175,66 @@
             z-index: 0;
         }
 
+        /* New styles for Skills section */
+        .skills-section {
+            padding: 30px 0;
+            text-align: center;
+             /* Adding top and bottom borders */
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    /* Add some margin to give breathing room to borders */
+    margin: 20px 0;
+        }
+        .skills-Text{
+            font-size:30px;
+            background: linear-gradient(90deg, rgb(221, 69, 153), rgb(40, 108, 216), rgb(153, 18, 153));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 300;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            text-align: left;
+            margin-left: 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            padding: 20px;
+            border-radius: 10px;
+           /* background: rgba(255, 255, 255, 0.05);*/
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+       /* .skill-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+            */
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .skill-name {
+            color: rgba(236, 236, 236, 1);
+            font-size: 14px;
+            margin: 0;
+        }
+
         @media (max-width: 768px) {
             .content-wrapper {
                 flex-direction: column;
@@ -163,6 +243,12 @@
             .text-content,
             .image-content {
                 min-width: unset;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 20px;
+                padding: 10px;
             }
         }
     </style>
@@ -176,6 +262,7 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </header>
+    <section id="home"> 
     <div class="content-wrapper">
         <div class="text-content">
             <h1 class="gradient-text">FRONTEND<br>DEVELOPER</h1>
@@ -188,5 +275,58 @@
             <img src="Photo.png" class="portfolio-image" alt="Portfolio Image" loading="lazy">
         </div>
     </div>
+</section>
+    <!-- New Skills Section -->
+    <section id="skills" class="skills-section">
+        <h2 class="skills-Text">Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma" class="skill-icon">
+                <p class="skill-name">Figma</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg" alt="HTML5" class="skill-icon">
+                <p class="skill-name">HTML5</p>
+            </div>
+            <div class="skill-item">
+                <img src="images\css-icon.png" alt="CSS3" class="skill-icon">
+                <p class="skill-name">CSS3</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" alt="JavaScript" class="skill-icon">
+                <p class="skill-name">JavaScript</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-icon.svg" alt="Bootstrap" class="skill-icon">
+                <p class="skill-name">Bootstrap</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="React" class="skill-icon">
+                <p class="skill-name">React</p>
+            </div>
+            <!-- Programming Languages -->
+          
+            <div class="skill-item">
+                <img src="images\c-icon.png" alt="C" class="skill-icon">
+                <p class="skill-name">C</p>
+            </div>
+            <div class="skill-item">
+                <img src="images\c++-icon.png" alt="C++" class="skill-icon">
+                <p class="skill-name">C++</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="Python" class="skill-icon">
+                <p class="skill-name">Python</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" class="skill-icon">
+                <p class="skill-name">Git</p>
+            </div>
+            <div class="skill-item">
+                <img src="images\bitbucket-icon.png" alt="Bitbucket" class="skill-icon">
+                <p class="skill-name">Bitbucket</p>
+            </div>    
+        </div>
+    </section>
 </body>
 </html>
