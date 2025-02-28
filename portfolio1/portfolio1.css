@@ -37,7 +37,20 @@
             z-index: 1000;
             backdrop-filter: blur(5px); /* Add blur effect to background */
         }
-
+        .name-text{
+            color:silver;
+            font-size:large;
+            font-weight: 500;
+            letter-spacing: 3px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+        .cv-download{
+            background: linear-gradient(120deg, rgb(221, 69, 153), rgb(40, 108, 216));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: Medium;
+        }
         .nav-links {
             list-style: none;
             padding: 0;
@@ -64,7 +77,6 @@
         .nav-links a:focus {
             color: #8DC9F2;
             outline: none;
-            background-color: rgba(255, 255, 255, 0.1);
         }
 
         .content-wrapper {
@@ -140,13 +152,15 @@
 
         .sub-info {
             font-size: 1em;
-            color: rgba(241, 240, 240, 0.797);
+            color: rgba(213, 212, 212, 0.772);
             font-family: Arial, Helvetica, sans-serif;
             text-align: left;
             max-width: 500px;
             margin: 20px 0;
         }
-
+        .web-text{
+            color: #8DC9F2;
+        }
         .portfolio-image {
             max-width: 60%;
             height: auto;
@@ -211,11 +225,6 @@
             transition: transform 0.3s ease, background 0.3s ease;
         }
 
-       /* .skill-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-            */
         .skill-icon {
             width: 50px;
             height: 50px;
@@ -244,3 +253,385 @@
                 padding: 10px;
             }
         }
+        /* Projects Section Styles */
+.projects-section {
+    padding: 50px 0;
+    text-align: center;
+    /* Removed border lines */
+    margin: 20px 0;
+}
+
+.projects-text {
+    font-size: 30px;
+    background: linear-gradient(90deg, rgb(221, 69, 153), rgb(40, 108, 216), rgb(153, 18, 153));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-align: left;
+    margin-left: 0;
+    margin-bottom: 40px;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    width: calc(33.333% - 14px);
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    height: 450px;
+    position: relative;
+}
+
+/* Gradient border on hover */
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    padding: 2px;
+    background: linear-gradient(45deg, rgb(40, 108, 216), rgb(153, 18, 153), rgb(221, 69, 153));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    border-color: transparent; /* Hide the original border when hovering */
+}
+
+.project-image {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+    z-index: 0;
+}
+
+.project-title {
+    color: #8DC9F2;
+    font-size: 20px;
+    margin: 0 0 12px 0;
+}
+
+.project-description {
+    color: rgba(236, 236, 236, 0.9);
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.project-tech span {
+    background: rgba(40, 108, 216, 0.2);
+    color: rgba(236, 236, 236, 0.9);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    border: 1px solid rgba(40, 108, 216, 0.4);
+}
+.project-links {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+}
+/* GitHub button with simple border */
+.project-link:last-child {
+    color: rgba(236, 236, 236, 0.9);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: 1px solid rgba(236, 236, 236, 0.3);
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.project-link:last-child:hover {
+    border-color: rgba(236, 236, 236, 0.8);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 900px) {
+    .projects-container {
+        flex-direction: column;
+    }
+    
+    .project-card {
+        width: 100%;
+        height: auto;
+        min-height: 400px;
+    }
+}
+/* Contact Section Styles */
+.contact-section {
+    padding: 60px 0;
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+.contact-text {
+    font-size: 30px;
+    background: linear-gradient(90deg, rgb(221, 69, 153), rgb(40, 108, 216), rgb(153, 18, 153));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-align: left;
+    margin-left: 0;
+    margin-bottom: 40px;
+}
+
+.contact-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.contact-info {
+    flex: 1;
+    text-align: left;
+}
+
+.contact-heading {
+    font-size: 24px;
+    color: #8DC9F2;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.contact-subheading {
+    color: rgba(236, 236, 236, 0.9);
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-method {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: #8DC9F2;
+    transition: all 0.3s ease;
+}
+
+.contact-method:hover .contact-icon {
+    transform: translateY(-3px);
+    color: rgb(221, 69, 153);
+}
+
+.contact-detail h3 {
+    font-size: 16px;
+    color: rgba(236, 236, 236, 0.9);
+    margin: 0 0 5px 0;
+    font-weight: 500;
+}
+
+.contact-detail a {
+    color: rgba(236, 236, 236, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 14px;
+}
+
+.contact-detail a:hover {
+    color: rgb(221, 69, 153);
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-links a {
+    color: rgba(236, 236, 236, 0.7);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: rgb(40, 108, 216);
+    transform: translateY(-2px);
+}
+
+.contact-form-container {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.contact-form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    padding: 1px;
+    background: linear-gradient(45deg, rgba(40, 108, 216, 0.5), rgba(153, 18, 153, 0.5), rgba(221, 69, 153, 0.5));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+.contact-form-container:hover {
+    transform: translateY(-5px);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    color: rgba(236, 236, 236, 0.9);
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgba(40, 108, 216, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(45deg, rgb(40, 108, 216), rgb(153, 18, 153), rgb(221, 69, 153));
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-button svg {
+    transition: transform 0.3s ease;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:hover svg {
+    transform: translate(3px, -3px);
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-info, 
+    .contact-form-container {
+        width: 100%;
+    }
+    
+    .contact-form-container {
+        margin-top: 30px;
+    }
+}
