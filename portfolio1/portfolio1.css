@@ -682,7 +682,109 @@ section {
     min-height: 100vh;
     scroll-margin-top: 70px;
 }
+/* Internships Timeline */
+.internships-timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 25px;
+}
 
+/* Gradient line */
+.internships-timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: linear-gradient(to bottom, rgba(40, 108, 216, 0.7), rgba(221, 69, 153, 0.7));
+    top: -1%;
+    bottom: 5%;
+    left: 20%;
+    margin-left: -2px;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(153, 18, 153, 0.5);
+    z-index: 0; /* Ensure the line is behind the circle dots */
+}
+
+/* Circle dot for each internship item */
+.internship-item {
+    display: flex;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+/* Circle dot for each internship item */
+.internship-item::before {
+    content: '';
+    position: absolute;
+    left: 20%; /* Keep this the same as your gradient line position */
+    top: 0;
+    transform: translateX(-125%); /* This centers the circle on the line */
+    width: 16px;
+    height: 16px;
+    background: rgb(197, 197, 197);
+    border-radius: 50%;
+    border: 2px solid rgba(164, 164, 164, 0.5);
+    z-index: 1; /* This ensures the circle appears above the line */
+    box-shadow: 0 0 0 5px  #111723; /* This creates a "break" in the line */
+}
+
+/* Internship date */
+.internship-date {
+    width: 20%;
+    padding-right: 70px;
+    text-align: right;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    padding-top: 10px;
+}
+
+/* Internship content */
+.internship-content {
+    width: 80%;
+    padding-left: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 25px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for internship content */
+.internship-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(153, 18, 153, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .internships-timeline::before {
+        left: 30px;
+    }
+
+    .internship-item {
+        flex-direction: column;
+    }
+
+    .internship-item::before {
+        left: 30px; /* Adjust the position for smaller screens */
+    }
+
+    .internship-date {
+        width: 100%;
+        text-align: left;
+        padding-left: 70px;
+        margin-bottom: 10px;
+    }
+
+    .internship-content {
+        width: 100%;
+        padding-left: 70px;
+        margin-left: 0;
+    }
+}
 .internships-text {
     font-size: 30px;
     background: linear-gradient(90deg, rgb(221, 69, 153), rgb(40, 108, 216), rgb(153, 18, 153));
@@ -696,79 +798,6 @@ section {
     margin-left: 0;
     margin-bottom: 40px;
 }
-
-.internships-timeline {
-    max-width: 1000px;
-    margin: 0 auto;
-    position: relative;
-    padding: 20px 25px;
-}
-
-.internships-timeline::before {
-    content: '';
-    position: absolute;
-    width: 4px;
-    background: linear-gradient(to bottom, rgba(40, 108, 216, 0.7), rgba(221, 69, 153, 0.7));
-    top: 0;
-    bottom: 0;
-    left: 20%;
-    margin-left: -2px;
-    border-radius: 4px;
-    box-shadow: 0 0 15px rgba(153, 18, 153, 0.5);
-}
-
-.internship-item {
-    display: flex;
-    position: relative;
-    margin-bottom: 60px;
-}
-
-.internship-date {
-    width: 20%;
-    padding-right: 70px;
-    text-align: right;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.95rem;
-    padding-top: 10px;
-}
-
-
-
-.internship-content {
-    width: 80%;
-    padding-left: 40px;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: 25px 30px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.internship-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 10px;
-    padding: 1px;
-    background: rgba(144, 144, 144, 0.699);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    z-index: -1;
-}
-
-.internship-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(153, 18, 153, 0.2);
-}
-
 .internship-title {
     color: white;
     font-size: 1.4rem;
@@ -825,10 +854,6 @@ section {
         padding-left: 70px;
         margin-bottom: 10px;
     }
-    
-    
-   
-    
     .internship-content {
         width: 100%;
         padding-left: 70px;
