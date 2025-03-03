@@ -728,17 +728,57 @@ section {
     box-shadow: 0 0 0 5px  #111723; /* This creates a "break" in the line */
 }
 
-/* Internship date */
+/* Alternative Internship date styling */
 .internship-date {
     width: 20%;
     padding-right: 70px;
     text-align: right;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
     font-size: 0.95rem;
     padding-top: 10px;
+    position: relative;
 }
 
+/* Create a unique styling for the date */
+.internship-date time {
+    display: inline-block;
+    color: #111723; /* Dark background color */
+    background-color: rgba(209, 209, 209, 0.9); /* White text on dark background */
+    padding: 8px 15px;
+    border-radius: 4px 20px 4px 20px; /* Asymmetrical border radius for interest */
+    letter-spacing: 1px;
+    position: relative;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-15px); /* Uplift the container slightly */
+    left:10px;
+}
+
+/* Add decorative element 
+.internship-date time::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+    top: 50%;
+    right: -14px;
+    transform: translateX(-1.9%) rotate(45deg);
+}
+*/
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .internship-date {
+        width: 100%;
+        text-align: left;
+        padding-left: 70px;
+        margin-bottom: 15px;
+    }
+    
+    .internship-date time::before {
+        left: -14px;
+        right: auto;
+    }
+}
 /* Internship content */
 .internship-content {
     width: 80%;
