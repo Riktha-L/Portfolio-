@@ -44,12 +44,26 @@ section {
     letter-spacing: 3px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
-.cv-download{
+.cv-download {
     background: linear-gradient(120deg, rgb(221, 69, 153), rgb(40, 108, 216));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: Medium;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.cv-download a {
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Inherit the gradient text color */
+}
+
+.cv-download:hover {
+    background: linear-gradient(120deg, rgb(40, 108, 216), rgb(221, 69, 153)); /* Reverse gradient on hover */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateY(-2px); /* Slight lift effect on hover */
 }
 .nav-links {
     list-style: none;
@@ -424,6 +438,20 @@ section {
         height: auto;
         min-height: 400px;
     }
+}
+/* Gradient Dots Styles */
+.gradient-dots {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 30px auto;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, rgb(221, 69, 153), rgb(40, 108, 216));
 }
 /* Contact Section Styles */
 .contact-section {
