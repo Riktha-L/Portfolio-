@@ -592,11 +592,11 @@ section {
     mask-composite: exclude;
     z-index: -1;
 }
-
+/*
 .contact-form-container:hover {
     transform: translateY(-5px);
 }
-
+*/
 .contact-form {
     width: 100%;
     display: flex;
