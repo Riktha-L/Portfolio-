@@ -26,3 +26,22 @@ const image = document.querySelector('.portfolio-image');
          backToTopButton.classList.remove('visible');
      }
  });
+
+ document.addEventListener('DOMContentLoaded', () => {
+    // Select the "Contact Me" button
+    const contactButton = document.querySelector('.gradient-button');
+    
+    // Add click event listener
+    contactButton.addEventListener('click', (event) => {
+        // Prevent default button behavior
+        event.preventDefault();
+        
+        // Select the contact section
+        const contactSection = document.getElementById('contact');
+        
+        // Scroll to the contact section smoothly
+        contactSection.scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    });
+});
