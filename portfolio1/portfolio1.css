@@ -182,7 +182,7 @@ section {
     height: auto;
     border-radius: 8px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .image-content::before {
@@ -197,7 +197,55 @@ section {
     border-radius: 50%;
     z-index: 0;
 }
+.image-content {
+    position: relative; /* Ensure the container is positioned relatively */
+    text-align: center;
+    min-width: 300px;
+}
 
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: rgba(201, 201, 201, 0.865);
+    z-index: 1; /* Ensure the text is behind the image */
+    pointer-events: none; /* Allow clicks to pass through to the image */
+}
+
+.text-left, .text-right {
+    position: absolute;
+    color: rgba(201, 201, 201, 0.865);
+    font-family: 'Courier Prime', monospace;
+    font-size: 15px;
+    font-weight: medium;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.text-left {
+    top: 10%; /* Randomly adjust these values */
+    left: 5%;
+}
+
+.text-right {
+    top: 20%; /* Randomly adjust these values */
+    right: 5%;
+}
+
+/* Add more classes for different positions if needed */
+.text-top-left {
+    top: 10%;
+    left: 5%;
+}
+
+.text-bottom-right {
+    bottom: 10%;
+    right: 5%;
+}
+
+/* Add more classes as needed for different positions */
 /* New styles for Skills section */
 .skills-section {
     padding: 30px 0;
