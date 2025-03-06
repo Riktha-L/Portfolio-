@@ -43,7 +43,7 @@ section {
     color:silver;
     font-size:large;
     font-weight: 500;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 .cv-download {
@@ -185,18 +185,27 @@ section {
     z-index: 2;
 }
 
+
 .image-content::before {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 90%;
-    height: 90%;
+    width: 80%; /* Slightly bigger */
+    height: 80%; /* Slightly bigger */
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(30, 60, 90, 0.2) 30%, rgba(0, 0, 0, 0) 70%);
-    border-radius: 50%;
+    background: 
+        radial-gradient(circle at 70% 50%, rgba(0, 100, 255, 0.2) 15%, rgba(0, 0, 0, 0) 40%), /* Blue on the right - Layer 1 */
+        radial-gradient(circle at 30% 50%, rgba(255, 100, 150, 0.2) 15%, rgba(0, 0, 0, 0) 40%), /* Pink on the left - Layer 1 */
+        radial-gradient(ellipse at 65% 55%, rgba(0, 100, 255, 0.15) 10%, rgba(0, 0, 0, 0) 30%), /* Blue on the right - Layer 2 */
+        radial-gradient(ellipse at 35% 45%, rgba(255, 100, 150, 0.15) 10%, rgba(0, 0, 0, 0) 30%), /* Pink on the left - Layer 2 */
+        radial-gradient(ellipse at 75% 60%, rgba(0, 100, 255, 0.1) 5%, rgba(0, 0, 0, 0) 25%), /* Blue on the right - Layer 3 */
+        radial-gradient(ellipse at 25% 40%, rgba(255, 100, 150, 0.1) 5%, rgba(0, 0, 0, 0) 25%); /* Pink on the left - Layer 3 */
+    border-radius: 50%; /* Slightly rounded but not a perfect circle */
     z-index: 0;
+    filter: blur(5px); /* Add a blur effect to the entire gradient */
 }
+
 .image-content {
     position: relative; /* Ensure the container is positioned relatively */
     text-align: center;
@@ -209,14 +218,14 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    color: rgba(201, 201, 201, 0.865);
+    color: rgba(177, 177, 177, 0.772);
     z-index: 1; /* Ensure the text is behind the image */
     pointer-events: none; /* Allow clicks to pass through to the image */
 }
 
 .text-left, .text-right {
     position: absolute;
-    color: rgba(201, 201, 201, 0.865);
+    color: rgba(181, 181, 181, 0.756);
     font-family: 'Courier Prime', monospace;
     font-size: 15px;
     font-weight: medium;
