@@ -45,3 +45,32 @@ const image = document.querySelector('.portfolio-image');
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all navigation links that should scroll to sections
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get the target section id from the href attribute
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                // Calculate header height (if you have a fixed header)
+                const headerHeight = document.querySelector('header').offsetHeight || 0;
+                
+                // Get position of the target element
+                const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset;
+                
+                // Scroll with offset for header height and additional space
+                window.scrollTo({
+                    top: targetPosition - headerHeight - 20, // 20px additional space
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
