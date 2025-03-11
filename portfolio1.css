@@ -40,7 +40,127 @@ section {
     z-index: 1000;
     backdrop-filter: blur(5px); /* Add blur effect to background */
     transition: top 0.3s;
-    
+}
+@media (max-width: 768px) {
+    .header {
+        width: 90%; /* Make the header wider on mobile */
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack navigation links vertically */
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 16px; /* Increase font size for better readability */
+    }
+
+    .cv-download {
+        margin-top: 10px; /* Add some space above the CV download link */
+    }
+}
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column; /* Stack text and image vertically */
+        text-align: center; /* Center align text */
+    }
+
+    .text-content, .image-content {
+        min-width: 100%; /* Full width for mobile */
+    }
+
+    .gradient-text {
+        font-size: 40px; /* Reduce font size for mobile */
+    }
+
+    .name-text {
+        font-size: 24px; /* Adjust font size for mobile */
+    }
+
+    .sub-info {
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+
+    .gradient-button {
+        margin: 20px auto; /* Center the button */
+    }
+}
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column; /* Stack project cards vertically */
+    }
+
+    .project-card {
+        width: 100%; /* Full width for mobile */
+        margin-bottom: 20px; /* Add space between cards */
+    }
+
+    .project-image {
+        height: 150px; /* Adjust image height for mobile */
+    }
+
+    .project-title {
+        font-size: 18px; /* Adjust font size for mobile */
+    }
+
+    .project-description {
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+}
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Stack contact info and form vertically */
+    }
+
+    .contact-info, .contact-form-container {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .contact-form-container {
+        margin-top: 20px; /* Add space between info and form */
+    }
+
+    .contact-heading {
+        font-size: 20px; /* Adjust font size for mobile */
+    }
+
+    .contact-subheading {
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+
+    .contact-method {
+        flex-direction: column; /* Stack contact method details vertically */
+        align-items: flex-start;
+    }
+
+    .contact-icon {
+        margin-bottom: 10px; /* Add space between icon and text */
+    }
+}
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack footer sections vertically */
+        text-align: center; /* Center align text */
+    }
+
+    .footer-links {
+        flex-direction: column; /* Stack footer links vertically */
+        gap: 20px; /* Add space between sections */
+    }
+
+    .footer-nav ul li a {
+        padding-left: 0; /* Remove padding for mobile */
+    }
+
+    .footer-social-icons {
+        justify-content: center; /* Center social icons */
+    }
+
+    .footer-bottom {
+        flex-direction: column; /* Stack copyright and back-to-top button vertically */
+        gap: 10px; /* Add space between elements */
+    }
 }
 .name-text{
     color:silver;
